@@ -1,3 +1,4 @@
+
 How to Install
 ==============
 
@@ -56,5 +57,33 @@ How to Install
 
       Copy all the files from src/Devtime/RatingBundle/Resources/public/images/* to web/bundles/devtimerating/images
 
+  6. Include jquery and raty plugin in your Twig template
 
+      Add this lines to your twig template 
+
+      {% javascripts
+        '@DevtimeRatingBundle/Resources/public/js/jquery.min.js'
+        '@DevtimeRatingBundle/Resources/public/js/jquery.raty.js'
+      %}
+      <script type="text/javascript" src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+
+
+
+How to use it in your form
+====================
+
+Add the "rating" type to field you want to use as a rating, it should be a numeric field.
+
+    ...
+    public function buildForm(FormBuilder $builder, array $options)
+    {   
+        $builder
+            ->add('rating', 'rating')
+            ->add('comment')
+        ;   
+    }
+
+
+*TODO : Document all the available options
 
