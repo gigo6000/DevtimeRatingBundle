@@ -1,0 +1,25 @@
+      {% block js %}
+      <script type="text/javascript" src="{{ asset('/js/jquery.min.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('/js/jquery.raty.js') }}"></script>
+      {% endblock %}
+
+{% if app.session.hasFlash('success') %}
+    <div class="message success">
+            {{ app.session.flash('success') }}
+    </div>
+{% endif %}
+
+
+<form action=" {{ app.request.requestUri }} " id="rating" method="post" {{ form_enctype(form) }}>
+    <tr>
+        <td>
+            {{ form_widget(form) }}
+        </td>
+    </tr>
+
+
+<center>
+    <input type="submit" />
+</center>
+</form>
+
