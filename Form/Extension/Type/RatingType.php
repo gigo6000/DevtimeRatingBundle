@@ -64,7 +64,7 @@ class RatingType extends IntegerType
 
         $options['number'] = '5';
         $options['readonly'] = 'false';
-        $options['path'] = '/img';
+        $options['path'] = '/bundles/devtimerating/images';
         $options['hintList'] = array();
         $options['starOff'] = 'star-off.png';
         $options['starOn'] = 'star-on.png';

@@ -1,0 +1,60 @@
+How to Install
+==============
+
+  1. Add this bundle to your vendor dir
+
+    * Vendor Mode
+      Add the following lines in your deps file:
+
+        [DevtimeRatingBundle]
+        git=git://github.com/gigo6000/DevtimeRatingBundle.git
+        target=/bundles/Devtime/RatingBundle
+
+      Run the vendor script:
+
+        ./bin/vendors install
+
+    * Submodule Mode
+       $ git submodule add git://github.com/gigo6000/DevtimeRatingBundle.git vendor/bundles/Devtime/RatingBundle
+
+
+  2. Add the "Devtime" namespace to your autoloader:
+
+        // app/autoload.php
+        $loader->registerNamespaces(array(
+        'Devtime' => __DIR__.'/../vendor/bundles',
+        // your other namespaces
+        ));
+
+  3. Add the "Devtime" namespace to your autoloader:
+
+        // app/ApplicationKernel.php
+        public function registerBundles()
+        {
+            return array(
+                // ...
+                new Devtime\RatingBundle\DevtimeRatingBundle(),
+                // ...
+            );
+        }
+
+  4. Add the twig form configuration:
+
+        // app/config/config.yml
+
+        # Twig Configuration
+        twig:
+            form:
+                resources:
+                      - 'DevtimeRatingBundle:Form:field.html.twig'
+
+  5. Copy the plugin images in your web dir:
+       
+      * TODO: make this work with app/console assets:install
+
+      Create a dir called web/bundles/devtimerating/images
+
+      Copy all the files from src/Devtime/RatingBundle/Resources/public/images/* to web/bundles/devtimerating/images
+
+
+
