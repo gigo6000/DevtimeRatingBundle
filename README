@@ -73,7 +73,7 @@ How to Install
 How to use it in your form
 ===========================
 
-Add the "rating" type to field you want to use as a rating, it should be a numeric field.
+Add the "rating" type to field you want to use as a rating.
 
     ...
     public function buildForm(FormBuilder $builder, array $options)
